@@ -23,7 +23,7 @@ Please cite our paper if you use this code.
 
 An overview of our proposed model is given below
 
-![model](/assets/model.pdf)
+![model](/assets/model.png)
 
 ## Citation
 
