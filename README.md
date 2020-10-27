@@ -25,7 +25,7 @@ Please cite our paper and kindly give a star for this repository if you use this
 
 An overall architecture of our proposed framework is as follow:
 
-<img src="/assets/model.png" width = "30%" />
+<img src="/assets/model.png" width = "40%" />
 
 ## Citation
 
