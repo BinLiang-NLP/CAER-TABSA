@@ -1,0 +1,1 @@
+repeat: 1min_test_loss: 0.0013696282403543591repeat: 2min_test_loss: 0.0013535531470552087repeat: 3min_test_loss: 0.001354733482003212
