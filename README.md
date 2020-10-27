@@ -1,10 +1,11 @@
 # Introduction
+The core code of our proposed method for refining target embeddings.
 This repository was used in our paper:  
   
 **“Context-aware Embedding for Targeted Aspect-based Sentiment Analysis”**  
 Bin Liang, Jiachen Du, Ruifeng Xu<sup>*</sup>, Binyang Li, Hejiao Huang. *Proceedings of ACL 2019*
   
-Please cite our paper if you use this code. 
+Please cite our paper and kindly give a star for this repository if you use this code. 
 
 ## Requirements
 
@@ -21,13 +22,13 @@ Please cite our paper if you use this code.
 
 ## Model
 
-An overview of our proposed model is given below
+An overall architecture of our proposed framework is as follow:
 
 <img src="/assets/model.png" width = "30%" />
 
 ## Citation
 
-If you use the code in your paper, please kindly star this repo and cite our paper
+The BibTex of the citation is as follow:
 
 ```bibtex
 @inproceedings{liang-etal-2019-context,
