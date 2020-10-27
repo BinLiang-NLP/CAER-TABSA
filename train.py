@@ -81,19 +81,20 @@ class Instructor:
                 optimizer.step()
 
                 if global_step % self.opt.log_step == 0:
-                    test_loss = self._evaluate_loss()
-                    if test_loss < min_test_loss:
-                        increase_flag = True
-                        min_test_loss = test_loss
-                        if self.opt.save and test_f1 > self.global_f1:
-                            self.global_f1 = test_f1
-                            torch.save(self.model.state_dict(), 'state_dict/'+self.opt.model_name+'_'+self.opt.dataset+'.pkl')
-                            print('>>> best model saved.')
-                    print('loss: {:.6f}, test_loss: {:.6f}'.format(loss.item(), test_loss))
+                    print('loss: {:.6f}'.format(loss.item()))
+            test_loss = self._evaluate_loss()
+            print('test_loss: {:.6f}'.format(test_loss))
+            if test_loss < min_test_loss:
+                increase_flag = True
+                min_test_loss = test_loss
+                if self.opt.save and test_f1 > self.global_f1:
+                    self.global_f1 = test_f1
+                    torch.save(self.model.state_dict(), 'state_dict/'+self.opt.model_name+'_'+self.opt.dataset+'.pkl')
+                    print('>>> best model saved.')
             if increase_flag == False:
                 continue_not_increase += 1
                 if continue_not_increase >= 3:
-                    print('early stop.')
+                    print('Early stopping.')
                     break
             else:
                 continue_not_increase = 0
@@ -116,7 +117,7 @@ class Instructor:
         test_loss = n_test_loss / n_test_total
         return test_loss
 
-    def run(self, repeats=3):
+    def run(self):
         criterion = nn.MSELoss()
         _params = filter(lambda p: p.requires_grad, self.model.parameters())
         optimizer = self.opt.optimizer(_params, lr=self.opt.learning_rate, weight_decay=self.opt.l2reg)
@@ -126,17 +127,10 @@ class Instructor:
 
         f_out = open('log/'+self.opt.model_name+'_'+self.opt.dataset+'_val.txt', 'w', encoding='utf-8')
 
-        min_test_loss_avg = 0
-        for i in range(repeats):
-            print('repeat: ', (i+1))
-            f_out.write('repeat: '+str(i+1))
-            self._reset_params()
-            min_test_loss = self._train(criterion, optimizer)
-            print('min_test_loss: {0}'.format(min_test_loss))
-            f_out.write('min_test_loss: {0}'.format(min_test_loss))
-            min_test_loss_avg += min_test_loss
-            print('#' * 100)
-        print("min_test_loss_avg:", min_test_loss_avg / repeats)
+        self._reset_params()
+        min_test_loss = self._train(criterion, optimizer)
+        print('min_test_loss: {0}'.format(min_test_loss))
+        f_out.write('min_test_loss: {0}'.format(min_test_loss))
 
         f_out.close()
 
