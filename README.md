@@ -23,7 +23,7 @@ Please cite our paper if you use this code.
 
 An overview of our proposed model is given below
 
-![model](/assets/model.png){:height="50%" width="50%"}
+<img src="/assets/model.png" width = "50%" />
 
 ## Citation
 
