@@ -2,7 +2,7 @@
 This repository was used in our paper:  
   
 **“Context-aware Embedding for Targeted Aspect-based Sentiment Analysis”**  
-Bin Liang, Jiachen Du, Ruifeng Xu<sup>*</sup>, Binyang Li, Hejiao Huang. ^*Proceedings of ACL 2019
+Bin Liang, Jiachen Du, Ruifeng Xu<sup>*</sup>, Binyang Li, Hejiao Huang. *Proceedings of ACL 2019*
   
 Please cite our paper if you use this code. 
 
