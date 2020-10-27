@@ -50,3 +50,9 @@ The BibTex of the citation is as follow:
     abstract = "Attention-based neural models were employed to detect the different aspects and sentiment polarities of the same target in targeted aspect-based sentiment analysis (TABSA). However, existing methods do not specifically pre-train reasonable embeddings for targets and aspects in TABSA. This may result in targets or aspects having the same vector representations in different contexts and losing the context-dependent information. To address this problem, we propose a novel method to refine the embeddings of targets and aspects. Such pivotal embedding refinement utilizes a sparse coefficient vector to adjust the embeddings of target and aspect from the context. Hence the embeddings of targets and aspects can be refined from the highly correlative words instead of using context-independent or randomly initialized vectors. Experiment results on two benchmark datasets show that our approach yields the state-of-the-art performance in TABSA task.",
 }
 ```
+
+
+## Credits
+
+* The code of this repository partly relies on [ABSA-PyTorch](https://github.com/songyouwei/ABSA-PyTorch). 
+* Here, I would like to express my gratitude to the authors of the [ABSA-PyTorch](https://github.com/songyouwei/ABSA-PyTorch) repository.
